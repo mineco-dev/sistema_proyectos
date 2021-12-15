@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use App\Models\Bodega;
 use Illuminate\Database\Seeder;
 use App\Models\Category;
+use App\Models\Cooperation;
+use App\Models\CooperationType;
 use App\Models\Dependency;
 use App\Models\Insumo;
 use App\Models\Subcategory;
@@ -35,6 +38,12 @@ class DatabaseSeeder extends Seeder
 
         Bodega::create(['nombre' => 'Compra Directa']);
         Bodega::create(['nombre' => 'Compra de Stock']);
+
+        Cooperation::create(['name' =>'Reembolsable']);
+        Cooperation::create(['name' =>'No Reembolsable']);
+
+        CooperationType::create(['name' => 'Unilateral']);
+        CooperationType::create(['name' => 'Bilateral']);
     }
 }
 /* App\User::create([

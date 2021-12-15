@@ -27,43 +27,22 @@
                             </x-slot>
 
                             <x-slot name="content">
-                                <!-- Account Management -->                                
+                                <!-- Account Management -->
+                                <x-jet-dropdown-link href="{{ route('catalogo-cooperacion') }}">
+                                    Cooperacion
+                                </x-jet-dropdown-link>        
+                                
+                                <x-jet-dropdown-link href="{{ route('catalogo-tipo-cooperacion') }}">
+                                    Tipo Cooperacion
+                                </x-jet-dropdown-link>  
 
-                                <x-jet-dropdown-link href="{{ route('categorias') }}">
-                                    Categoría
-                                </x-jet-dropdown-link>
 
-                                <x-jet-dropdown-link href="{{ route('bodegas.index') }}">
-                                    Bodegas
-                                </x-jet-dropdown-link>
-
-                                <x-jet-dropdown-link href="{{ route('presentaciones.index') }}">
-                                    Presentaciones
-                                </x-jet-dropdown-link>
-
-                                <x-jet-dropdown-link href="{{ route('dependencias.index') }}">
-                                    Dependencias
-                                </x-jet-dropdown-link>
-
-                                <div class="border-t border-gray-300"></div>
-
-                                <x-jet-dropdown-link href="{{ route('insumos.index') }}">
-                                    Insumos
-                                </x-jet-dropdown-link>
-
-                                <x-jet-dropdown-link href="{{ route('proveedores') }}">
-                                    Proveedores
-                                </x-jet-dropdown-link>
-
-                                <x-jet-dropdown-link href="{{ route('ingreso-live') }}">
-                                    Ingreso
-                                </x-jet-dropdown-link>
 
                             </x-slot>
                         </x-jet-dropdown>
 
-                        <a class="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Kardex</a>
-                        <a class="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Inventario</a>
+                        <a class="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Proyectos</a>
+
                         <a class="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Acerca de</a>
                     </div>
             </div>

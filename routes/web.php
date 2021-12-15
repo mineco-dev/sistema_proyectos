@@ -4,12 +4,16 @@ use App\Http\Controllers\BodegaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Catalogos\CatalogoController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CooperacionController;
+use App\Http\Controllers\CooperationTypeController;
 use App\Http\Controllers\IngresoController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\InsumoController;
 use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\DependencyController;
+use App\Http\Livewire\Catalogos\Cooperacion;
+use App\Http\Livewire\Catalogos\CooperationType;
 use App\Http\Livewire\Provider\Index;
 use App\Http\Livewire\Ingreso\Form;
 
@@ -41,6 +45,14 @@ Route::resource('dependencias',DependencyController::class)->middleware('auth');
 Route::resource('insumos',InsumoController::class)->middleware('auth');
 Route::resource('proveedores',ProviderController::class)->except('index')->middleware('auth');
 Route::resource('bodegas',BodegaController::class)->middleware('auth');
+
+
+/*PROYECTOS*/
+Route::get('/cat-cooperacion',Cooperacion::class)->name('catalogo-cooperacion')->middleware('auth');
+Route::resource('cooperacion',CooperacionController::class)->middleware('auth');
+
+Route::get('/cat-tipo-cooperacion',CooperationType::class)->name('catalogo-tipo-cooperacion')->middleware('auth');
+Route::resource('tipo-cooperacion',CooperationTypeController::class)->middleware('auth');
 
 
 /* RUTAS DE INGRESO */
