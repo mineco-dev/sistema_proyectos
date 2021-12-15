@@ -1,0 +1,10 @@
+el codigo de la subcategoria se puede repetir en diferentes categorias
+
+en el llenado de insumo colocar el codigo a la subcategorias
+
+eliminar el campo cantidad de la creacino del producto
+
+
+
+
+
