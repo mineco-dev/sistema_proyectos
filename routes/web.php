@@ -16,6 +16,7 @@ use App\Http\Livewire\Catalogos\Cooperacion;
 use App\Http\Livewire\Catalogos\CooperationType;
 use App\Http\Livewire\Provider\Index;
 use App\Http\Livewire\Ingreso\Form;
+use App\Http\Livewire\Proyectos\Crear;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,9 @@ Route::resource('cooperacion',CooperacionController::class)->middleware('auth');
 
 Route::get('/cat-tipo-cooperacion',CooperationType::class)->name('catalogo-tipo-cooperacion')->middleware('auth');
 Route::resource('tipo-cooperacion',CooperationTypeController::class)->middleware('auth');
+
+/*FORMS*/
+Route::get('proyectos/crear',Crear::class)->name('proyectos-crear')->middleware('auth');
 
 
 /* RUTAS DE INGRESO */
