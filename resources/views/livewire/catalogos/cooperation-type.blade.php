@@ -76,7 +76,7 @@
                                         </a>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <form action="{{ route('cooperacion.destroy',$item->id) }}" method="POST">
+                                        <form action="{{ route('tipo-cooperacion.destroy',$item->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <input type="submit" value="Eliminar" class="bg-red-500 hover:bg-red-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2" onclick="return confirm('¿Deseas eliminar?')">

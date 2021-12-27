@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CooperationType;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
-class CooperationTypeController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,11 @@ class CooperationTypeController extends Controller
      */
     public function index()
     {
-        //
+        $proyectos = Project::all();
+
+        return view('projects.index',[
+            'proyectos' => $proyectos
+        ]);
     }
 
     /**
@@ -35,9 +39,9 @@ class CooperationTypeController extends Controller
      */
     public function store(Request $request)
     {
-        CooperationType::create(['name' => $request->name]);
+        Project::create($request->all());
 
-        return back()->with('status','Almacenado con éxito');
+        return back()->with('status', 'Almacenado con éxito');
     }
 
     /**
@@ -59,9 +63,7 @@ class CooperationTypeController extends Controller
      */
     public function edit($id)
     {
-        return view('livewire.catalogos.cooperation-type-edit',[
-            'tipo_cooperacion' => CooperationType::find($id)
-        ]);
+        //
     }
 
     /**
@@ -73,14 +75,7 @@ class CooperationTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-            $cooperationType = CooperationType::find($id);
-            try{
-                $cooperationType->update($request->all());
-                //return back()->with('status','Actualizado con éxito.');
-                return redirect('cat-tipo-cooperacion')->with('status','Actualizado con éxito.');
-            } catch (\Exception $e){
-                return back()->with('status',$e->getMessage());
-            }
+        //
     }
 
     /**
@@ -91,8 +86,6 @@ class CooperationTypeController extends Controller
      */
     public function destroy($id)
     {
-        CooperationType::find($id)->delete();
-
-        return back()->with('status','Eliminado satisfactoriamente.');
+        //
     }
 }

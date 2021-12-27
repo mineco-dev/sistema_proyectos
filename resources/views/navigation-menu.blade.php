@@ -56,7 +56,7 @@
 
                             <x-slot name="content">
                                 <!-- Account Management -->
-                                <x-jet-dropdown-link href="{{ route('catalogo-cooperacion') }}">
+                                <x-jet-dropdown-link href="{{ route('proyecto.index') }}">
                                     Listado
                                 </x-jet-dropdown-link>        
                                 
