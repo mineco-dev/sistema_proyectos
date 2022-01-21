@@ -22,8 +22,9 @@ class CreateProjectsTable extends Migration
             $table->foreignId('cooperante_id')->constrained();
             $table->foreignId('formalization_document_id')->constrained();
             $table->float('monto');
+            $table->float('contrapartida');
+            $table->float('monto_total');
             $table->foreignId('moneda_id')->constrained();
-            $table->integer('contrapartida');
             $table->foreignId('resource_classification_id')->constrained();
             $table->string('objeto');
             $table->string('beneficiarios');

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <script src="{{ mix('js/app.js') }}" defer></script>
+    @livewireStyles
 
 </head>
 
@@ -42,6 +43,8 @@
     </footer>
 
     @yield('script')
+    @livewireScripts
+    
 
 
 </body>

@@ -29,11 +29,11 @@
                             <x-slot name="content">
                                 <!-- Account Management -->
                                 <x-jet-dropdown-link href="{{ route('catalogo-cooperacion') }}">
-                                    Cooperacion
+                                    Cooperación
                                 </x-jet-dropdown-link>        
                                 
                                 <x-jet-dropdown-link href="{{ route('catalogo-tipo-cooperacion') }}">
-                                    Tipo Cooperacion
+                                    Tipo Cooperación
                                 </x-jet-dropdown-link>  
 
 
@@ -69,7 +69,7 @@
                             </x-slot>
                         </x-jet-dropdown>
 
-                        <a class="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Proyectos</a>
+                        <!-- <a class="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Proyectos</a> -->
 
                         <a class="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="#">Acerca de</a>
                     </div>
