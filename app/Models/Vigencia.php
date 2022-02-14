@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cooperation extends Model
+class Vigencia extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
-
-
+    protected $casts = [
+        'inicio' => 'date:Y-m-d',
+        'fin' => 'date:Y-m-d'
+    ];
 }

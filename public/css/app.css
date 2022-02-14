@@ -1410,11 +1410,11 @@ select {
 .grid-cols-1 {
 	grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.grid-cols-3 {
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-}
 .grid-cols-10 {
 	grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+.grid-cols-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .flex-col {
 	flex-direction: column;
@@ -1798,6 +1798,10 @@ select {
 .text-3xl {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
+}
+.text-5xl {
+	font-size: 3rem;
+	line-height: 1;
 }
 .text-6xl {
 	font-size: 3.75rem;

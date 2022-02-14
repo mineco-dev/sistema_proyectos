@@ -2,27 +2,23 @@
     <div class="grid grid-cols-10">
 
         <div class="col-start-2 col-span-8">
-            <form action="{{ route('proyecto.store') }}" class=" p-8 shadow-md rounded-md text-left" method="POST">
-                @csrf
+
                 <label class="block m-2">
                     <span class="block text-gray-700 text-sm font-bold m-2">Nombre del proyecto</span>
-                    <textarea wire:model.debounce.5ms="name" type="name" name="name" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required></textarea>
+                    <textarea wire:model.debounce.5ms="project.name" type="name" name="name" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" disabled placeholder="" required></textarea>
                 </label>
 
                 <div class="flex">
 
                     <div class="flex-1 m-2">
                         <label class="flex-1 text-gray-700 text-sm font-bold m-2" for="grid-state">
-                            Cooperación
+                            Cooperación {{ $cooperacion->name }}
                         </label>
                         <div class="relative">
-                            <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="cooperacion" required name="cooperation_id">
-                                <option hidden selected value="">Selecciona una cooperación</option>
-                                @foreach($cooperations as $cooperation)
-                                <option value="{{ $cooperation->id }}">{{ $cooperation->name }}</option>
-                                @endforeach
-
+                            <select  class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="cooperacion" required name="cooperation_id" disabled>
+                                <option hidden selected value="">{{ $cooperacion->name }}</option>
                             </select>
+                            
                         </div>
                     </div>
 
@@ -31,11 +27,9 @@
                             Tipo Cooperación
                         </label>
                         <div class="relative">
-                            <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="tipo_cooperacion" required name="cooperation_type_id">
-                                <option hidden selected value="">Selecciona un tipo de cooperación</option>
-                                @foreach($cooperationtypes as $cooperationtype)
-                                <option value="{{ $cooperationtype->id }}">{{ $cooperationtype->name }}</option>
-                                @endforeach
+                            <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="tipo_cooperacion" required name="cooperation_type_id" disabled>
+                                <option hidden selected value="">{{ $cooperacionType->name }}</option>
+                                
 
                             </select>
                         </div>
@@ -46,7 +40,7 @@
 
                 <label class="block m-2">
                     <span class="block text-gray-700 text-sm font-bold m-2">Origen de la Cooperación</span>
-                    <input value="{{ old('origen') }}" type="text" name="origen" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required>
+                    <input wire:model="project.origen" type="text" name="origen" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" disabled>
                 </label>
 
 
@@ -56,12 +50,9 @@
                             Nombre del Cooperante
                         </label>
                         <div class="relative">
-                            <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="nombre_cooperante" required name="cooperante_id">
-                                <option hidden selected value="">Selecciona un cooperante</option>
-                                @foreach($cooperantes as $cooperante)
-                                <option value="{{ $cooperante->id }}">{{ $cooperante->name }}</option>
-                                @endforeach
-
+                            <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="nombre_cooperante" required name="cooperante_id" disabled>
+                            <option hidden selected value="">{{ $cooperante->name }}</option>
+                                
                             </select>
                         </div>
                     </div>
@@ -73,9 +64,9 @@
                         <div class="relative">
                             <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="documento_formalizacion" required name="formalization_document_id">
                                 <option hidden selected value="">Selecciona un documento de Formalización</option>
-                                @foreach($documentos_formalizacion as $documento)
-                                <option value="{{ $documento->id }}">{{ $documento->name }}</option>
-                                @endforeach
+                                
+                                <option value=""></option>
+                                
                             </select>
                         </div>
                     </div>
@@ -114,9 +105,9 @@
                         <div class="relative">
                             <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="moneda" required name="moneda_id">
                                 <option hidden selected value="">Selecciona una moneda</option>
-                                @foreach($monedas as $moneda)
-                                <option value="{{ $moneda->id }}">{{ $moneda->name }}</option>
-                                @endforeach
+                                
+                                <option value=""></option>
+                                
 
                             </select>
                         </div>
@@ -129,9 +120,9 @@
                         <div class="relative">
                             <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="clasificacion" required name="resource_classification_id">
                                 <option hidden selected value="">Selecciona un recurso</option>
-                                @foreach($recursos as $recurso)
-                                <option value="{{ $recurso->id }}">{{ $recurso->name }}</option>
-                                @endforeach
+                                
+                                <option value=""></option>
+                                
                             </select>
                         </div>
                     </div>
@@ -167,26 +158,17 @@
                         </label>
                         <div class="relative">
                             <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="ods" required name="objetivo_id" multiple>
-                                @foreach($objetivos as $objetivo)
-                                <option value="{{ $objetivo->id }}">{{ $objetivo->name }}</option>
-                                @endforeach
+                                
+                                <option value=""></option>
+                                
                             </select>
                         </div>
                     </div>
 
-                    <div class="flex-1 m-2">
-                        <label class="flex-1 text-gray-700 text-sm font-bold m-2" for="grid-state">
-                            Vinculación K'atun
-                        </label>
-                        <div class="relative">
-                            <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="unidad_ejecutora" required name="katun_id">
-                                <option hidden selected value="">Selecciona una opción</option>
-                                @foreach($katuns as $katun)
-                                <option value="{{ $katun->id }}">{{ $katun->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
+                    <label class="flex-1 m-2">
+                        <span class="flex-1 text-gray-700 text-sm font-bold m-2">Vinculación con el K'atun</span>
+                        <input value="{{ old('vinculacion') }}" type="text" name="vinculacion" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required>
+                    </label>
                 </div>
 
                 <label class="block m-2">
@@ -207,9 +189,9 @@
                         <div class="relative">
                             <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="unidad_ejecutora" required name="unit_id">
                                 <option hidden selected value="">Selecciona una unidad ejecutora</option>
-                                @foreach($unidades as $unidad)
-                                <option value="{{ $unidad->id }}">{{ $unidad->name }}</option>
-                                @endforeach
+                                
+                                <option value=""></option>
+                                
                             </select>
                         </div>
                     </div>
@@ -248,9 +230,9 @@
                         <div class="relative">
                             <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="estado" required name="estado">
                                 <option hidden selected value="">Selecciona un estado</option>
-                                @foreach($estados as $estado)
-                                <option value="{{ $estado->id }}">{{ $estado->name }}</option>
-                                @endforeach
+                                
+                                <option value=""></option>
+                               
                             </select>
                         </div>
                     </div>
@@ -271,8 +253,8 @@
                     </ul>
                 </div>
                 @endif
-                <input type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2" value="Crear">
-            </form>
+                
+            
         </div>
 
 

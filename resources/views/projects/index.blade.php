@@ -20,7 +20,7 @@
 
 <table class="min-w-full divide-y divide-gray-200 m-8">
     <thead class="bg-gray-50">
-        <tr>
+        <tr >
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 No.
             </th>
@@ -34,7 +34,7 @@
                 Tipo Cooperación
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Origen
+                Estado
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Acción
@@ -49,28 +49,25 @@
             </td>
 
             <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-500">{{ $proyecto->name }}</div>
+                <div class="text-sm text-gray-500">{{ $proyecto->nameCorto() }}</div>
             </td>
 
             <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-500">{{ $proyecto->cooperation_name }}</div>
+                <div class="text-sm text-gray-500">{{ $proyecto->cooperation->name }}</div>
             </td>
 
             <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-500">{{ $proyecto->cooperation_type_name }}</div>
+                <div class="text-sm text-gray-500">{{ $proyecto->cooperationType->name }}</div>
             </td>
 
             <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-500">{{ $proyecto->origen }}</div>
+                <div class="text-sm text-gray-500 font-black">{{ $proyecto->state->name }}</div>
             </td>
 
             <td class="px-6 py-4 whitespace-nowrap">
-                <a >
-
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2" disabled="true">Ver
-
-                    </button>
-                </a>
+                <a href="{{ route('proyectos-mostrar',$proyecto) }}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Ver</button></a>
+                <a href="{{ route('proyectos-contactos',$proyecto) }}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Contacto</button></a>
+                <a href="{{ route('proyectos-vigencia',$proyecto) }}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Vigencia</a>
             </td>
 
 

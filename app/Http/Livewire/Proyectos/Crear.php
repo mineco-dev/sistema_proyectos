@@ -11,6 +11,8 @@ use App\Models\Moneda;
 use App\Models\Objetivo;
 use App\Models\ResourceClassification;
 use App\Models\Unit;
+use App\Models\State;
+use App\Models\Katun;
 use Livewire\Component;
 use SebastianBergmann\Environment\Console;
 
@@ -59,7 +61,7 @@ class Crear extends Component
     public function formatMontoTotal(){
         
         $monto_nuevo = $this->montoTotal;
-        dd($monto_nuevo);
+        //dd($monto_nuevo);
         $monto_nuevo = number_format($monto_nuevo, 2, '.', ',');
         $this->montoTotal = $monto_nuevo;
 
@@ -76,6 +78,8 @@ class Crear extends Component
             'recursos' => ResourceClassification::all(),
             'objetivos' => Objetivo::all(),
             'unidades' => Unit::all(),
+            'estados' => State::all(),
+            'katuns' => Katun::all()
         ]);
     }
 }

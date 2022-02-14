@@ -12,6 +12,7 @@ use App\Models\CooperationType;
 use App\Models\Dependency;
 use App\Models\FormalizationDocument;
 use App\Models\Insumo;
+use App\Models\Katun;
 use App\Models\Moneda;
 use App\Models\Objetivo;
 use App\Models\Subcategory;
@@ -19,6 +20,7 @@ use App\Models\User;
 use App\Models\presentation;
 use App\Models\Provider;
 use App\Models\ResourceClassification;
+use App\Models\State;
 use App\Models\Unit;
 use phpDocumentor\Reflection\Types\Resource_;
 
@@ -114,6 +116,22 @@ class DatabaseSeeder extends Seeder
         Unit::create(['name'=>'108']);
         Unit::create(['name'=>'109']);
 
+        State::create(['name'=>'Negociación']);
+        State::create(['name'=>'Registro']);
+        State::create(['name'=>'Implementación']);
+        State::create(['name'=>'Ejecución']);
+        State::create(['name'=>'NegociaCierreción']);
+
+        Katun::create(['name'=>'Protección Social y Reducción de la Pobreza']);
+        Katun::create(['name'=>'Acceso a Servicios de Salud']);
+        Katun::create(['name'=>'Acceso al Agua y Gestión de Recursos Naturales']);
+        Katun::create(['name'=>'Empleo e Inversión']);
+        Katun::create(['name'=>'Educación']);
+        Katun::create(['name'=>'Valor económico de los Recursos Naturales']);
+        Katun::create(['name'=>'Fortalecimiento institucional, seguridad y justicia']);
+        Katun::create(['name'=>'Seguridad Alimentaria y Nutricional']);
+        Katun::create(['name'=>'Reforma Fiscal Integral']);
+        Katun::create(['name'=>'Ordenamiento Territorial']);
     }
 }
 /* App\User::create([

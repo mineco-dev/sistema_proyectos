@@ -17,7 +17,11 @@ use App\Http\Livewire\Catalogos\Cooperacion;
 use App\Http\Livewire\Catalogos\CooperationType;
 use App\Http\Livewire\Provider\Index;
 use App\Http\Livewire\Ingreso\Form;
+use App\Http\Livewire\Proyectos\ContactList;
 use App\Http\Livewire\Proyectos\Crear;
+use App\Http\Livewire\Proyectos\ProyectoShow;
+use App\Http\Livewire\Proyectos\Vigencia;
+use App\Models\Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +61,11 @@ Route::resource('cooperacion',CooperacionController::class)->middleware('auth');
 
 Route::get('/cat-tipo-cooperacion',CooperationType::class)->name('catalogo-tipo-cooperacion')->middleware('auth');
 Route::resource('tipo-cooperacion',CooperationTypeController::class)->middleware('auth');
+
+Route::get('proyectos/{project}/vigencia',Vigencia::class)->name('proyectos-vigencia');
+Route::get('proyectos/{project}/contactos',ContactList::class)->name('proyectos-contactos');
+
+Route::get('proyectos/{project}/mostrar',ProyectoShow::class)->name('proyectos-mostrar')->middleware('auth');
 
 
 
