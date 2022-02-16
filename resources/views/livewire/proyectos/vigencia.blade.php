@@ -1,5 +1,4 @@
 <div>
-    <form wire:submit.prevent="save">
     <div class="grid grid-cols-10">
             <div class="col-start-2 col-span-8">
                 <p class="text-5xl font-sans ">Proyecto: {{ $project->name }}</p>
@@ -24,5 +23,4 @@
             <a href="/proyecto"> <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Regresar</button> </a>
         
     </div>
-    </form>
 </div>

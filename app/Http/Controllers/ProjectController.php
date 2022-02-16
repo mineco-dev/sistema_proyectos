@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Livewire\Proyectos\Expediente;
 use App\Models\Contact;
+use App\Models\Expediente as ModelsExpediente;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -131,5 +133,17 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function cargarExpediente(Request $request){
+
+        //dd($request->ruta);
+        $expediente = new ModelsExpediente();
+        $expediente->project_id = $request->project_id;
+        $expediente->ruta = $request->file('ruta')->store('expedientes','public');
+        $expediente->save();
+
+        return redirect(route('proyectos.index'));
+
     }
 }

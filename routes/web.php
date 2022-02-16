@@ -19,6 +19,7 @@ use App\Http\Livewire\Provider\Index;
 use App\Http\Livewire\Ingreso\Form;
 use App\Http\Livewire\Proyectos\ContactList;
 use App\Http\Livewire\Proyectos\Crear;
+use App\Http\Livewire\Proyectos\Expediente;
 use App\Http\Livewire\Proyectos\ProyectoShow;
 use App\Http\Livewire\Proyectos\Vigencia;
 use App\Models\Contact;
@@ -64,10 +65,11 @@ Route::resource('tipo-cooperacion',CooperationTypeController::class)->middleware
 
 Route::get('proyectos/{project}/vigencia',Vigencia::class)->name('proyectos-vigencia');
 Route::get('proyectos/{project}/contactos',ContactList::class)->name('proyectos-contactos');
+Route::get('proyectos/{project}/expediente',Expediente::class)->name('proyecto-expediente');
 
 Route::get('proyectos/{project}/mostrar',ProyectoShow::class)->name('proyectos-mostrar')->middleware('auth');
 
-
+Route::post('proyecto/cargar-expediente',[ProjectController::class,'cargarExpediente'])->name('cargar-expediente');
 
 /*FORMS*/
 Route::get('proyectos/crear',Crear::class)->name('proyectos-crear')->middleware('auth');
