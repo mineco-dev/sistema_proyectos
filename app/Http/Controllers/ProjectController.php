@@ -146,4 +146,10 @@ class ProjectController extends Controller
         return redirect(route('proyectos.index'));
 
     }
+
+    public function eliminarExpediente($project){
+        //dd($project);
+        $expediente = ModelsExpediente::find($project)->delete();
+        return back();
+    }
 }

@@ -15,7 +15,8 @@ class Expediente extends Component
 
     public function mount(){
         //$this->archivo = false;
-        $this->archivo = ModelsExpediente::find($this->project->id);
+        $this->archivo = ModelsExpediente::where('project_id',$this->project->id)->first();
+        
     }
 
     public function render()
