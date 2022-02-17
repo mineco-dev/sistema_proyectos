@@ -22,6 +22,8 @@ use App\Http\Livewire\Proyectos\Crear;
 use App\Http\Livewire\Proyectos\Expediente;
 use App\Http\Livewire\Proyectos\ProyectoShow;
 use App\Http\Livewire\Proyectos\Vigencia;
+use App\Http\Livewire\Usuario;
+use App\Http\Livewire\Rol;
 use App\Models\Contact;
 
 /*
@@ -71,6 +73,9 @@ Route::get('proyectos/{project}/mostrar',ProyectoShow::class)->name('proyectos-m
 
 Route::post('proyecto/cargar-expediente',[ProjectController::class,'cargarExpediente'])->name('cargar-expediente');
 Route::get('proyecto/{project}/eliminar-expediente',[ProjectController::class,'eliminarExpediente'])->name('eliminar-expediente');
+
+Route::get('usuarios',Usuario::class)->name('usuarios')->middleware('auth');
+Route::get('roles',Rol::class)->name('roles')->middleware('auth');
 
 /*FORMS*/
 Route::get('proyectos/crear',Crear::class)->name('proyectos-crear')->middleware('auth');

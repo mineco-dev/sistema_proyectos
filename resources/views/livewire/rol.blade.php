@@ -1,0 +1,65 @@
+<div>
+    @if (session('status'))
+
+    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+        <strong class="font-bold">{{ session('status') }}</strong>
+
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+
+        </span>
+
+    </div>
+
+    @endif
+    <div class="text-center py-8">
+        <h3 class="text-xl text-gray-700 mb-2">Roles</h3>
+    </div>
+
+    <div class="text-center py-8">
+        <form action="" wire:submit.prevent="agregar">
+            @csrf
+            <input value="{{ old('rol') }}" wire:model.debounce.500ms="rol" type="text" name="rol" class="flex-1 appearance-none border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required>
+
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Agregar</button>
+        </form>
+    </div>
+
+    <div class="flex justify-center">
+        <table class="divide-y divide-gray-200 m-8">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        No.
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Rol
+                    </th>
+                    <th scope="col col-span-2" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Acción
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+      
+            @foreach($roles as $rol)
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-500">{{ $rol->id }}</div>
+                    </td>
+
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-500">{{ $rol->name }}</div>
+                    </td>
+
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <button wire:click="eliminarRol({{ $rol->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold rounded focus:outline-none focus:shadow-outline">Eliminar</button>
+                    </td>
+
+                </tr>
+            @endforeach
+
+            </tbody>
+        </table>
+    </div>
+</div>
