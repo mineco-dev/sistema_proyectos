@@ -8,6 +8,7 @@ use App\Models\Expediente as ModelsExpediente;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -143,13 +144,15 @@ class ProjectController extends Controller
         $expediente->ruta = $request->file('ruta')->store('expedientes','public');
         $expediente->save();
 
-        return redirect(route('proyectos.index'));
+        return redirect(route('proyecto.index'))->with('status','Expediente cargado con éxito.');
 
     }
 
     public function eliminarExpediente($project){
         //dd($project);
-        $expediente = ModelsExpediente::find($project)->delete();
-        return back();
+        $expediente = ModelsExpediente::where('project_id',$project)->first();
+        $expediente->delete();
+        Storage::disk('public')->delete($expediente->ruta);
+        return back()->with('status','Expediente pdf eliminado con éxito.');
     }
 }
