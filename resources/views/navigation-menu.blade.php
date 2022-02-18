@@ -56,13 +56,17 @@
 
                             <x-slot name="content">
                                 <!-- Account Management -->
+                                @can('Ver Listado de Proyetos')
                                 <x-jet-dropdown-link href="{{ route('proyecto.index') }}">
                                     Listado
-                                </x-jet-dropdown-link>        
+                                </x-jet-dropdown-link>   
+                                @endcan     
                                 
+                                @can('Crear Proyecto')
                                 <x-jet-dropdown-link href="{{ route('proyectos-crear') }}">
                                     Crear
                                 </x-jet-dropdown-link>  
+                                @endcan
 
 
 
@@ -91,6 +95,9 @@
                                 <x-jet-dropdown-link href="{{ route('roles') }}">
                                     Roles
                                 </x-jet-dropdown-link>    
+                                <x-jet-dropdown-link href="{{ route('permisos') }}">
+                                    Permisos
+                                </x-jet-dropdown-link>   
                                 
                             </x-slot>
                         </x-jet-dropdown>

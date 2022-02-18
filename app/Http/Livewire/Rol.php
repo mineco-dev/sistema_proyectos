@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class Rol extends Component
@@ -10,14 +11,23 @@ class Rol extends Component
     public $roles;
     public $rol;
     public $verPermisos;
+    public $permisosAsignados;
     public $permisos;
+    public array $checkeados;
 
     protected $rules = [
-        'rol' => 'required'
+        'rol' => 'required',
+        'checkeados' => ''
     ];
 
     public function mount(){
         $this->roles = Role::all();
+
+        $setOfIds = Role::pluck('id')->toArray();
+        $this->checkeados = array_fill_keys($setOfIds, [
+            'checked' => true
+        ]);
+        dd($this->checkeados);
     }
 
     public function render()
@@ -40,8 +50,10 @@ class Rol extends Component
     }
 
     public function verPermiso($idRol){
+        //OBTENER IDS
         $this->verPermisos = true;
         $role = Role::find($idRol);
-        $this->permisos = $role->permissions;
+        $this->permisos = Permission::all();
+        $this->permisosAsignados = $role->permissions;
     }
 }

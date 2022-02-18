@@ -25,6 +25,7 @@ use App\Http\Livewire\Proyectos\Vigencia;
 use App\Http\Livewire\Usuario;
 use App\Http\Livewire\Rol;
 use App\Models\Contact;
+use App\Http\Livewire\Permiso;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,7 @@ Route::get('proyecto/{project}/eliminar-expediente',[ProjectController::class,'e
 
 Route::get('usuarios',Usuario::class)->name('usuarios')->middleware('auth');
 Route::get('roles',Rol::class)->name('roles')->middleware('auth');
+Route::get('permisos',Permiso::class)->name('permisos')->middleware('auth');
 
 /*FORMS*/
 Route::get('proyectos/crear',Crear::class)->name('proyectos-crear')->middleware('auth');

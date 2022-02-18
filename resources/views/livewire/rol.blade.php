@@ -29,7 +29,7 @@
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        No.
+                        ID
                     </th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Rol
@@ -70,13 +70,13 @@
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        No.
+                        ID
                     </th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Permiso
                     </th>
                     <th scope="col col-span-2" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Acción
+                        Seleccionado
                     </th>
 
                 </tr>
@@ -94,14 +94,22 @@
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap">
+                        @foreach($permisosAsignados as $permisoAsignado)
+                            @if($permisoAsignado->id == $permiso->id)
+                                <input type="checkbox" class="rounded text-pink-500" checked wire:model="checkeados[{{ $permiso->id }}]"/>
+                            @else
+                                <input type="checkbox" class="rounded text-pink-500"/>
+                            @endif
+                        @endforeach
                     </td>
+
 
                 </tr>
             @endforeach
                
-
             </tbody>
         </table>
     </div>
     @endif
+    ****
 </div>
