@@ -26,9 +26,12 @@ class Usuario extends Component
         return view('livewire.usuario');
     }
 
-    public function asignarRol(){
-        dd($this->rol);
-        $user = User::find($usuario);
-        $user->assignRole('writer');
+    public function asignarRol($event,$id){
+        //dd($id);
+        $user = User::find($id);
+        $user->syncRoles([]); //Elimina roles y luego setea los asignados, en este caso no se coloca ninguno, para dejarlo a 0
+        $rol = Role::find($event);
+        $user->assignRole($rol);
+        
     }
 }

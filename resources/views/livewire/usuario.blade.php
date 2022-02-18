@@ -42,7 +42,7 @@
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-gray-500">{{ $usuario->name }} - {{ $usuario->rol }}</div>
+                        <div class="text-sm text-gray-500">{{ $usuario->name }} {{ $usuario->getRoleNames() }}</div>
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap">
@@ -51,9 +51,14 @@
 
                     <td class="px-6 py-4 whitespace-nowrap">
                         <form action="">
-                            <select name="" id="" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                            <select wire:change="asignarRol($event.target.value,{{ $usuario->id }})" name="" id="" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                <option value="">Sin Rol</option>
                                 @foreach($roles as $rol_individual)
+                                    @if ($usuario->getRoleNames()->first() == $rol_individual->name)
+                                    <option value="{{ $rol_individual->id }}" selected>{{ $rol_individual->name }}</option>
+                                    @else
                                     <option value="{{ $rol_individual->id }}">{{ $rol_individual->name }}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </form>

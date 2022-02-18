@@ -9,6 +9,8 @@ class Rol extends Component
 {
     public $roles;
     public $rol;
+    public $verPermisos;
+    public $permisos;
 
     protected $rules = [
         'rol' => 'required'
@@ -35,5 +37,11 @@ class Rol extends Component
         Role::find($rol)->delete();
 
         return redirect(route('roles'))->with('status','Eliminado Correctamente');
+    }
+
+    public function verPermiso($idRol){
+        $this->verPermisos = true;
+        $role = Role::find($idRol);
+        $this->permisos = $role->permissions;
     }
 }

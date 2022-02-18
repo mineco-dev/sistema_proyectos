@@ -41,8 +41,8 @@
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-      
-            @foreach($roles as $rol)
+
+                @foreach($roles as $rol)
                 <tr>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="text-sm text-gray-500">{{ $rol->id }}</div>
@@ -53,13 +53,55 @@
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap">
+                        <button wire:click="verPermiso({{ $rol->id }})" class="bg-green-500 hover:bg-green-700 text-white font-bold rounded focus:outline-none focus:shadow-outline">Ver Permisos</button>
                         <button wire:click="eliminarRol({{ $rol->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold rounded focus:outline-none focus:shadow-outline">Eliminar</button>
                     </td>
 
                 </tr>
-            @endforeach
+                @endforeach
 
             </tbody>
         </table>
     </div>
+
+    @if($verPermisos)
+    <div class="flex justify-center">
+        <table class="divide-y divide-gray-200 m-8">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        No.
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Permiso
+                    </th>
+                    <th scope="col col-span-2" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Acción
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+
+            @foreach($permisos as $permiso)
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-500">{{ $permiso->id }}</div>
+                    </td>
+
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-500">{{ $permiso->name }}</div>
+                    </td>
+
+                    <td class="px-6 py-4 whitespace-nowrap">
+                    </td>
+
+                </tr>
+            @endforeach
+               
+
+            </tbody>
+        </table>
+    </div>
+    @endif
 </div>
