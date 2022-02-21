@@ -42,7 +42,7 @@
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-gray-500">{{ $usuario->name }} {{ $usuario->getRoleNames() }}</div>
+                        <div class="text-sm text-gray-500">{{ $usuario->name }}</div>
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap">

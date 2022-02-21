@@ -10,6 +10,7 @@ class Rol extends Component
 {
     public $roles;
     public $rol;
+    public $rolSelected;
     public $verPermisos;
     public $permisosAsignados;
     public $permisos;
@@ -23,11 +24,11 @@ class Rol extends Component
     public function mount(){
         $this->roles = Role::all();
 
-        $setOfIds = Role::pluck('id')->toArray();
+/*         $setOfIds = Role::pluck('id')->toArray();
         $this->checkeados = array_fill_keys($setOfIds, [
             'checked' => true
-        ]);
-        dd($this->checkeados);
+        ]); */
+        //dd($this->checkeados);
     }
 
     public function render()
@@ -53,7 +54,32 @@ class Rol extends Component
         //OBTENER IDS
         $this->verPermisos = true;
         $role = Role::find($idRol);
+        $this->rolSelected = $role;
         $this->permisos = Permission::all();
         $this->permisosAsignados = $role->permissions;
+
+        $setOfIds = Permission::pluck('id')->toArray();
+        $this->checkeados = array_fill_keys($setOfIds,false);
+
+        foreach($this->checkeados as $clave => $valor){
+            
+            foreach($this->permisosAsignados as $permisosAsignado){
+                if ($permisosAsignado->id == $clave) {
+                    $this->checkeados[$clave] = true;
+                }
+            }
+        }
+    }
+
+    public function aplicarCambios(){
+ 
+
+        foreach($this->checkeados as $clave => $valor){
+            //dd($item);
+            if ($valor) {
+                $permission = Permission::find($clave);
+                $this->rolSelected->givePermissionTo($permission);
+            }
+        }
     }
 }

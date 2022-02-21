@@ -60,56 +60,60 @@
                 </tr>
                 @endforeach
 
+
+
             </tbody>
         </table>
     </div>
 
     @if($verPermisos)
-    <div class="flex justify-center">
-        <table class="divide-y divide-gray-200 m-8">
-            <thead class="bg-gray-50">
-                <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        ID
-                    </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Permiso
-                    </th>
-                    <th scope="col col-span-2" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Seleccionado
-                    </th>
+    <div class="flex flex-col justify-center">
+        <div class="flex justify-center">
+            <table class="divide-y divide-gray-200 m-8">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            ID
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Permiso
+                        </th>
+                        <th scope="col col-span-2" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Seleccionado
+                        </th>
 
-                </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
 
-            @foreach($permisos as $permiso)
-                <tr>
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-gray-500">{{ $permiso->id }}</div>
-                    </td>
-
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-gray-500">{{ $permiso->name }}</div>
-                    </td>
-
-                    <td class="px-6 py-4 whitespace-nowrap">
-                        @foreach($permisosAsignados as $permisoAsignado)
-                            @if($permisoAsignado->id == $permiso->id)
-                                <input type="checkbox" class="rounded text-pink-500" checked wire:model="checkeados[{{ $permiso->id }}]"/>
-                            @else
-                                <input type="checkbox" class="rounded text-pink-500"/>
-                            @endif
-                        @endforeach
-                    </td>
+                    @foreach($permisos as $permiso)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-500">{{ $permiso->id }}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-500">{{ $permiso->name }}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <input type="checkbox" class="rounded text-pink-500" wire:model="checkeados.{{ $permiso->id }}" />
+                        </td>
+                    </tr>
+                    @endforeach
 
 
-                </tr>
-            @endforeach
-               
-            </tbody>
-        </table>
+
+                </tbody>
+
+            </table>
+
+        </div>
+        <div class="flex justify-center">
+                <button wire:click="aplicarCambios" class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Aplicar cambios</button>
+        </div>
+
+        
+ 
     </div>
+
     @endif
-    ****
 </div>

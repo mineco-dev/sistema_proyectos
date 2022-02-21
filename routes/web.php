@@ -15,6 +15,7 @@ use App\Http\Controllers\DependencyController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Livewire\Catalogos\Cooperacion;
 use App\Http\Livewire\Catalogos\CooperationType;
+use App\Http\Livewire\Config\EspacioDisco;
 use App\Http\Livewire\Provider\Index;
 use App\Http\Livewire\Ingreso\Form;
 use App\Http\Livewire\Proyectos\ContactList;
@@ -78,6 +79,8 @@ Route::get('proyecto/{project}/eliminar-expediente',[ProjectController::class,'e
 Route::get('usuarios',Usuario::class)->name('usuarios')->middleware('auth');
 Route::get('roles',Rol::class)->name('roles')->middleware('auth');
 Route::get('permisos',Permiso::class)->name('permisos')->middleware('auth');
+
+Route::get('config/espacio',EspacioDisco::class)->name('espacio-disco')->middleware('auth');
 
 /*FORMS*/
 Route::get('proyectos/crear',Crear::class)->name('proyectos-crear')->middleware('auth');
