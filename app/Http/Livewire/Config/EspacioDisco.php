@@ -10,8 +10,10 @@ class EspacioDisco extends Component
 {
     public $files;
     public $total;
-    public $columnChartModel;
-
+    public $limite;
+    public $disponible;
+    public $porcentaje;
+    public $style;
     
     public function mount(){
         $files = Storage::disk('public')->files('expedientes');
@@ -19,14 +21,31 @@ class EspacioDisco extends Component
         foreach($files as $file){
             $size = Storage::disk('public')->size($file);
             $tam_mb = $size/1048576;
-            $total = $total + $tam_mb;
+            $tam_gb = $tam_mb/1024;
+            $total = $total + $tam_gb;
         }
-        $this->total=$total;
+        $this->total=number_format($total, 2);
+        $this->limite= 500;
+        $this->disponible=$this->limite - $this->total;
+        $this->porcentaje = ($this->total*100)/$this->limite;
+        $this->style='50%';
+
+    //dd($this->columnChartModel);
 
     }
 
     public function render()
     {
-        return view('livewire.config.espacio-disco');
+        $columnChartModel = 
+        (new ColumnChartModel())
+        ->setTitle('Expenses Peaks')
+        ->addColumn('Food', 100, '#f6ad55')
+        ->addColumn('Shopping', 200, '#fc8181')
+        ->addColumn('Travel', 300, '#90cdf4')
+    ;
+    
+        return view('livewire.config.espacio-disco')->with([
+            'columnChartModel' => $columnChartModel
+        ]);
     }
 }
