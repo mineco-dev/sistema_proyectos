@@ -431,14 +431,14 @@
 
             <div class="flex justify-center">
 
-            <p class="font-sans font-black text-6xl">
+            <p class="font-sans font-black ">
                 Planificación, Proyectos y Cooperación .
             </p>
             </div>
 
 
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                <div class="grid grid-cols-1 md:grid-cols-2">
+<!--                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">
                         <div class="flex items-center">
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
@@ -499,7 +499,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
