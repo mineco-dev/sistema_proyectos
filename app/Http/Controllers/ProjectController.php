@@ -141,18 +141,19 @@ class ProjectController extends Controller
         //dd($request->ruta);
         $expediente = new ModelsExpediente();
         $expediente->project_id = $request->project_id;
+        $expediente->nombre = $request->name;
         $expediente->ruta = $request->file('ruta')->store('expedientes','public');
         $expediente->save();
 
-        return redirect(route('proyecto.index'))->with('status','Expediente cargado con éxito.');
+        return redirect(route('proyecto-expediente',$request->project_id))->with('status','Archivo cargado con éxito.');
 
     }
 
-    public function eliminarExpediente($project){
+    public function eliminarExpediente($expediente){
         //dd($project);
-        $expediente = ModelsExpediente::where('project_id',$project)->first();
+        $expediente = ModelsExpediente::find($expediente);
         $expediente->delete();
         Storage::disk('public')->delete($expediente->ruta);
-        return back()->with('status','Expediente pdf eliminado con éxito.');
+        return back()->with('status','Archivo pdf eliminado con éxito.');
     }
 }

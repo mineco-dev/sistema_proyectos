@@ -74,7 +74,7 @@ Route::get('proyectos/{project}/expediente',Expediente::class)->name('proyecto-e
 Route::get('proyectos/{project}/mostrar',ProyectoShow::class)->name('proyectos-mostrar')->middleware('auth');
 
 Route::post('proyecto/cargar-expediente',[ProjectController::class,'cargarExpediente'])->name('cargar-expediente');
-Route::get('proyecto/{project}/eliminar-expediente',[ProjectController::class,'eliminarExpediente'])->name('eliminar-expediente');
+Route::get('proyecto/{expediente}/eliminar-expediente',[ProjectController::class,'eliminarExpediente'])->name('eliminar-expediente');
 
 Route::get('usuarios',Usuario::class)->name('usuarios')->middleware('auth');
 Route::get('roles',Rol::class)->name('roles')->middleware('auth');

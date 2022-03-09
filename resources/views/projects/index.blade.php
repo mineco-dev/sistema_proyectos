@@ -65,10 +65,10 @@
             </td>
 
             <td class="px-6 py-4 whitespace-nowrap">
-                <a href="{{ route('proyectos-mostrar',$proyecto) }}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Ver</button></a>
-                <a href="{{ route('proyectos-contactos',$proyecto) }}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Contacto</button></a>
-                <a href="{{ route('proyectos-vigencia',$proyecto) }}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Vigencia</button></a>
-                <a href="{{ route('proyecto-expediente',$proyecto) }}"><button class="fa-thin fa-paperclip bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Expediente</button></a>
+                <a href="{{ route('proyectos-mostrar',$proyecto) }}"><button class="bg-blue-900 hover:bg-blue-800 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Ver</button></a>
+                <a href="{{ route('proyectos-contactos',$proyecto) }}"><button class="bg-blue-900 hover:bg-blue-800 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Contacto</button></a>
+                <a href="{{ route('proyectos-vigencia',$proyecto) }}"><button class="bg-blue-900 hover:bg-blue-800 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Vigencia</button></a>
+                <a href="{{ route('proyecto-expediente',$proyecto) }}"><button class="fa-thin fa-paperclip bg-blue-900 hover:bg-blue-800 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Expediente</button></a>
             </td>
 
 

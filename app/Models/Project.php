@@ -36,6 +36,36 @@ class Project extends Model
         return $this->belongsTo(Cooperante::class);
     }
 
+    public function formalizationDocument()
+    {
+        return $this->belongsTo(FormalizationDocument::class);
+    }
+
+    public function moneda()
+    {
+        return $this->belongsTo(Moneda::class);
+    }
+
+    public function resourceClassification()
+    {
+        return $this->belongsTo(ResourceClassification::class);
+    }
+
+    public function objetivo()
+    {
+        return $this->belongsTo(Objetivo::class);
+    }
+
+    public function katun()
+    {
+        return $this->belongsTo(Katun::class);
+    }
+
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class);
+    }
+
     public function nameCorto()
     {
         return substr($this->name, 0, 30) . "...";

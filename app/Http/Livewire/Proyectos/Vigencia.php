@@ -42,6 +42,8 @@ class Vigencia extends Component
 
         $this->vigencia->save();
 
-        $this->redirect('/');
+        session()->flash('status', 'Vigencia actualizada correctamente.');
+
+        $this->redirect('/proyecto');
     }
 }

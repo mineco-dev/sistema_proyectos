@@ -16,6 +16,7 @@ class CreateExpedientesTable extends Migration
         Schema::create('expedientes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project_id')->constrained();
+            $table->string('nombre');
             $table->string('ruta');
             $table->timestamps();
         });

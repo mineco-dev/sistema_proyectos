@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Livewire\Rol;
 use App\Models\Article;
 use App\Models\Bodega;
 use Illuminate\Database\Seeder;
@@ -10,6 +11,7 @@ use App\Models\Cooperante;
 use App\Models\Cooperation;
 use App\Models\CooperationType;
 use App\Models\Dependency;
+use App\Models\Expediente;
 use App\Models\FormalizationDocument;
 use App\Models\Insumo;
 use App\Models\Katun;
@@ -23,6 +25,8 @@ use App\Models\ResourceClassification;
 use App\Models\State;
 use App\Models\Unit;
 use phpDocumentor\Reflection\Types\Resource_;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -132,6 +136,12 @@ class DatabaseSeeder extends Seeder
         Katun::create(['name'=>'Seguridad Alimentaria y Nutricional']);
         Katun::create(['name'=>'Reforma Fiscal Integral']);
         Katun::create(['name'=>'Ordenamiento Territorial']);
+
+        Role::create(['name'=>'Administrador']);
+
+        Permission::create(['name' => 'Modificar Catálogos']);
+        Permission::create(['name' => 'Ver Listado de Proyectos']);
+        Permission::create(['name' => 'Crear Proyecto']);
     }
 }
 /* App\User::create([

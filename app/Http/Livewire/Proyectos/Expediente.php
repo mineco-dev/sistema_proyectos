@@ -11,11 +11,24 @@ class Expediente extends Component
 {
     public Project $project;
 
-    public $archivo;
+    public $archivos;
+
+    public $rutaActual;
+
+    public $mostrarFrame;
 
     public function mount(){
-        //$this->archivo = false;
-        $this->archivo = ModelsExpediente::where('project_id',$this->project->id)->first();
+        $this->mostrarFrame = false;
+        $this->archivos = ModelsExpediente::where('project_id',$this->project->id)->get();
+        //dd($this->archivos);
+        
+    }
+
+    public function verArchivo($ruta){
+        
+        $this->rutaActual=$ruta;
+        $this->mostrarFrame=true;
+
         
     }
 
