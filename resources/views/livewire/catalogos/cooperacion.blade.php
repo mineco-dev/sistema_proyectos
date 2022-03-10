@@ -1,6 +1,6 @@
 <div>
     <div class=text-center>
-        <h1 class="text-3xl text-gray-700 mb-2 uppercase">Catálogo Cooperación</h1>
+        <h1 class="text-3xl text-gray-700 mb-2 ">Catálogo Cooperación</h1>
     </div>
 
     <div class=text-center>
