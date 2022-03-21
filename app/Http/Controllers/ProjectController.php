@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Livewire\Proyectos\Expediente;
 use App\Models\Contact;
+use App\Models\ContactType;
 use App\Models\Expediente as ModelsExpediente;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -80,12 +81,13 @@ class ProjectController extends Controller
 
         ]);
 
-
+        $id_unidad = ContactType::where('name','Unidad Beneficiada')->first();
         Contact::create([
             'project_id' => $project->id,
             'nombre' => $request->nombre_contacto,
             'email' => $request->correo_contacto,
-            'telefono' => $request->telefono_contacto
+            'telefono' => $request->telefono_contacto,
+            'contact_type_id' => $id_unidad->id ? $id_unidad->id : 1
         ]);
 
         return redirect('proyecto')->with('status', 'Almacenado con éxito');

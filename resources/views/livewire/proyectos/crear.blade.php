@@ -46,7 +46,7 @@
 
                 <label class="block m-2">
                     <span class="block text-gray-700 text-sm font-bold m-2">Origen de la Cooperación</span>
-                    <input value="{{ old('origen') }}" type="text" name="origen" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required>
+                    <textarea type="text" name="origen" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required></textarea>
                 </label>
 
 
@@ -141,12 +141,12 @@
                 <div class="flex">
                     <label class="flex-1 m-2">
                         <span class="flex-1  text-gray-700 text-sm font-bold m-2">Objeto de la Cooperación</span>
-                        <input value="{{ old('objeto') }}" type="text" name="objeto" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required>
+                        <textarea type="text" name="objeto" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required></textarea>
                     </label>
 
                     <label class="flex-1 m-2">
                         <span class="flex-1 text-gray-700 text-sm font-bold m-2">Beneficiarios</span>
-                        <input value="{{ old('beneficiarios') }}" type="text" name="beneficiarios" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required>
+                        <textarea type="text" name="beneficiarios" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required></textarea>
                     </label>
                 </div>
 

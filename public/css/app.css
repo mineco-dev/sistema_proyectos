@@ -1102,6 +1102,185 @@ select {
 .prose > :last-child {
 	margin-bottom: 0;
 }
+.prose-2xl {
+	font-size: 1.5rem;
+	line-height: 1.6666667;
+}
+.prose-2xl p {
+	margin-top: 1.3333333em;
+	margin-bottom: 1.3333333em;
+}
+.prose-2xl [class~="lead"] {
+	font-size: 1.25em;
+	line-height: 1.4666667;
+	margin-top: 1.0666667em;
+	margin-bottom: 1.0666667em;
+}
+.prose-2xl blockquote {
+	margin-top: 1.7777778em;
+	margin-bottom: 1.7777778em;
+	padding-left: 1.1111111em;
+}
+.prose-2xl h1 {
+	font-size: 2.6666667em;
+	margin-top: 0;
+	margin-bottom: 0.875em;
+	line-height: 1;
+}
+.prose-2xl h2 {
+	font-size: 2em;
+	margin-top: 1.5em;
+	margin-bottom: 0.8333333em;
+	line-height: 1.0833333;
+}
+.prose-2xl h3 {
+	font-size: 1.5em;
+	margin-top: 1.5555556em;
+	margin-bottom: 0.6666667em;
+	line-height: 1.2222222;
+}
+.prose-2xl h4 {
+	margin-top: 1.6666667em;
+	margin-bottom: 0.6666667em;
+	line-height: 1.5;
+}
+.prose-2xl img {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+.prose-2xl video {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+.prose-2xl figure {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+.prose-2xl figure > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.prose-2xl figure figcaption {
+	font-size: 0.8333333em;
+	line-height: 1.6;
+	margin-top: 1em;
+}
+.prose-2xl code {
+	font-size: 0.8333333em;
+}
+.prose-2xl h2 code {
+	font-size: 0.875em;
+}
+.prose-2xl h3 code {
+	font-size: 0.8888889em;
+}
+.prose-2xl pre {
+	font-size: 0.8333333em;
+	line-height: 1.8;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	border-radius: 0.5rem;
+	padding-top: 1.2em;
+	padding-right: 1.6em;
+	padding-bottom: 1.2em;
+	padding-left: 1.6em;
+}
+.prose-2xl ol {
+	margin-top: 1.3333333em;
+	margin-bottom: 1.3333333em;
+}
+.prose-2xl ul {
+	margin-top: 1.3333333em;
+	margin-bottom: 1.3333333em;
+}
+.prose-2xl li {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+.prose-2xl ol > li {
+	padding-left: 1.6666667em;
+}
+.prose-2xl ol > li::before {
+	left: 0;
+}
+.prose-2xl ul > li {
+	padding-left: 1.6666667em;
+}
+.prose-2xl ul > li::before {
+	width: 0.3333333em;
+	height: 0.3333333em;
+	top: calc(0.8333333em - 0.1666667em);
+	left: 0.25em;
+}
+.prose-2xl > ul > li p {
+	margin-top: 0.8333333em;
+	margin-bottom: 0.8333333em;
+}
+.prose-2xl > ul > li > *:first-child {
+	margin-top: 1.3333333em;
+}
+.prose-2xl > ul > li > *:last-child {
+	margin-bottom: 1.3333333em;
+}
+.prose-2xl > ol > li > *:first-child {
+	margin-top: 1.3333333em;
+}
+.prose-2xl > ol > li > *:last-child {
+	margin-bottom: 1.3333333em;
+}
+.prose-2xl ul ul, .prose-2xl ul ol, .prose-2xl ol ul, .prose-2xl ol ol {
+	margin-top: 0.6666667em;
+	margin-bottom: 0.6666667em;
+}
+.prose-2xl hr {
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+.prose-2xl hr + * {
+	margin-top: 0;
+}
+.prose-2xl h2 + * {
+	margin-top: 0;
+}
+.prose-2xl h3 + * {
+	margin-top: 0;
+}
+.prose-2xl h4 + * {
+	margin-top: 0;
+}
+.prose-2xl table {
+	font-size: 0.8333333em;
+	line-height: 1.4;
+}
+.prose-2xl thead th {
+	padding-right: 0.6em;
+	padding-bottom: 0.8em;
+	padding-left: 0.6em;
+}
+.prose-2xl thead th:first-child {
+	padding-left: 0;
+}
+.prose-2xl thead th:last-child {
+	padding-right: 0;
+}
+.prose-2xl tbody td {
+	padding-top: 0.8em;
+	padding-right: 0.6em;
+	padding-bottom: 0.8em;
+	padding-left: 0.6em;
+}
+.prose-2xl tbody td:first-child {
+	padding-left: 0;
+}
+.prose-2xl tbody td:last-child {
+	padding-right: 0;
+}
+.prose-2xl > :first-child {
+	margin-top: 0;
+}
+.prose-2xl > :last-child {
+	margin-bottom: 0;
+}
 .fixed {
 	position: fixed;
 }
@@ -1350,6 +1529,9 @@ select {
 .w-1\/2 {
 	width: 50%;
 }
+.w-1\/3 {
+	width: 33.333333%;
+}
 .min-w-0 {
 	min-width: 0px;
 }
@@ -1373,6 +1555,9 @@ select {
 }
 .flex-shrink-0 {
 	flex-shrink: 0;
+}
+.table-fixed {
+	table-layout: fixed;
 }
 .origin-top-left {
 	transform-origin: top left;
@@ -1477,6 +1662,16 @@ select {
 	--tw-space-y-reverse: 0;
 	margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
 	margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.space-x-1\.5 > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-x-reverse: 0;
+	margin-right: calc(0.375rem * var(--tw-space-x-reverse));
+	margin-left: calc(0.375rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+	--tw-space-x-reverse: 0;
+	margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+	margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .divide-y > :not([hidden]) ~ :not([hidden]) {
 	--tw-divide-y-reverse: 0;
@@ -1676,6 +1871,22 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(30, 64, 175, var(--tw-bg-opacity));
 }
+.bg-gray-400 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
+}
+.bg-gray-300 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
+}
+.bg-blue-300 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(147, 197, 253, var(--tw-bg-opacity));
+}
+.bg-red-400 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(248, 113, 113, var(--tw-bg-opacity));
+}
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
 }
@@ -1703,6 +1914,9 @@ select {
 }
 .p-8 {
 	padding: 2rem;
+}
+.p-4 {
+	padding: 1rem;
 }
 .px-4 {
 	padding-left: 1rem;
@@ -2124,6 +2338,10 @@ select {
 .hover\:bg-blue-900:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(30, 58, 138, var(--tw-bg-opacity));
+}
+.hover\:bg-blue-500:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
 	--tw-text-opacity: 1;

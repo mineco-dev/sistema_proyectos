@@ -40,7 +40,7 @@
 
                 <label class="block m-2">
                     <span class="block text-gray-700 text-sm font-bold m-2">Origen de la Cooperación</span>
-                    <input wire:model="project.origen" type="text" name="origen" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" disabled>
+                    <textarea wire:model.debounce.5ms="project.origen" type="text" name="origen" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" disabled placeholder="" required></textarea>
                 </label>
 
 
@@ -122,12 +122,12 @@
                 <div class="flex">
                     <label class="flex-1 m-2">
                         <span class="flex-1  text-gray-700 text-sm font-bold m-2">Objeto de la Cooperación</span>
-                        <input value="{{ $project->objeto }}" type="text" name="objeto" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required disabled>
+                        <textarea wire:model.debounce.5ms="project.objeto" type="name" name="objeto" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" disabled placeholder="" required></textarea>
                     </label>
 
                     <label class="flex-1 m-2">
                         <span class="flex-1 text-gray-700 text-sm font-bold m-2">Beneficiarios</span>
-                        <input value="{{ $project->beneficiarios }}" type="text" name="beneficiarios" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required disabled>
+                        <textarea wire:model.debounce.5ms="project.beneficiarios" type="name" name="beneficiarios" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" disabled placeholder="" required></textarea>
                     </label>
                 </div>
 

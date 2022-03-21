@@ -29,7 +29,7 @@ class Crear extends Component
         $monto=str_replace(',','',$this->monto);
         $contrapartida=str_replace(',','',$this->contrapartida);
         
-        $this->montoTotal = number_format((float)$monto + (float)$contrapartida, 2, '.', ',');
+        (float)$this->montoTotal = number_format((float)$monto + (float)$contrapartida, 2, '.', ',');
 
     }
 

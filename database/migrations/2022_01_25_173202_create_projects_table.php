@@ -15,10 +15,10 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->text('name')->unique();
             $table->foreignId('cooperation_id')->constrained();
             $table->foreignId('cooperation_type_id')->constrained();
-            $table->string('origen');
+            $table->text('origen');
             $table->foreignId('cooperante_id')->constrained();
             $table->foreignId('formalization_document_id')->constrained();
             $table->float('monto');
@@ -26,16 +26,16 @@ class CreateProjectsTable extends Migration
             $table->float('monto_total');
             $table->foreignId('moneda_id')->constrained();
             $table->foreignId('resource_classification_id')->constrained();
-            $table->string('objeto');
-            $table->string('beneficiarios');
-            $table->string('resumen');
-            $table->string('resultados');
+            $table->text('objeto');
+            $table->text('beneficiarios');
+            $table->text('resumen');
+            $table->text('resultados');
             $table->foreignId('objetivo_id')->constrained();
             $table->foreignId('katun_id')->constrained();
-            $table->string('descripcion');
-            $table->string('observaciones');
+            $table->text('descripcion');
+            $table->text('observaciones');
             $table->foreignId('unit_id')->constrained();
-            $table->string('unidad_beneficiada');
+            $table->text('unidad_beneficiada');
             $table->foreignId('state_id')->constrained();
             $table->timestamps();
         });

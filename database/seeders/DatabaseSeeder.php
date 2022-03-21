@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Bodega;
 use Illuminate\Database\Seeder;
 use App\Models\Category;
+use App\Models\ContactType;
 use App\Models\Cooperante;
 use App\Models\Cooperation;
 use App\Models\CooperationType;
@@ -124,7 +125,7 @@ class DatabaseSeeder extends Seeder
         State::create(['name'=>'Registro']);
         State::create(['name'=>'Implementación']);
         State::create(['name'=>'Ejecución']);
-        State::create(['name'=>'NegociaCierreción']);
+        State::create(['name'=>'Cierre']);
 
         Katun::create(['name'=>'Protección Social y Reducción de la Pobreza']);
         Katun::create(['name'=>'Acceso a Servicios de Salud']);
@@ -142,6 +143,9 @@ class DatabaseSeeder extends Seeder
         Permission::create(['name' => 'Modificar Catálogos']);
         Permission::create(['name' => 'Ver Listado de Proyectos']);
         Permission::create(['name' => 'Crear Proyecto']);
+
+        ContactType::create(['name' => 'Unidad Beneficiada']);
+        ContactType::create(['name' => 'Cooperante']);
     }
 }
 /* App\User::create([

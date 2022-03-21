@@ -24,7 +24,9 @@ class ProyectoShow extends Component
         'project.origen' => '',
         'project.monto' => '',
         'project.contrapartida' => '',
-        'project.monto_total' => ''
+        'project.monto_total' => '',
+        'project.objeto' => '',
+        'project.beneficiarios' => ''
     ];
 
     public function mount()
