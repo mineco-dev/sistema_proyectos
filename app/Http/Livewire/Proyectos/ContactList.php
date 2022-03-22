@@ -24,7 +24,7 @@ class ContactList extends Component
     protected $rules = [
         'nombre_contacto' => 'required',
         'correo_contacto' => 'required|email',
-        'telefono_contacto' => 'required',
+        'telefono_contacto' => 'required|digits:8',
         'tipo_contacto' => 'required',
     ];
 
@@ -45,7 +45,7 @@ class ContactList extends Component
             'project_id' => $this->project->id,
             'nombre' => $this->nombre_contacto,
             'email' => $this->correo_contacto,
-            'telefono' => $this->correo_contacto,
+            'telefono' => $this->telefono_contacto,
             'contact_type_id' => $this->tipo_contacto
         ]);
 

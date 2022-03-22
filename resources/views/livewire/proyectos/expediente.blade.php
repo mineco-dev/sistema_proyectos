@@ -4,7 +4,12 @@
 
         <div class="col-start-2 col-span-8">
 
-            <p class="text-5xl font-sans ">Proyecto: {{ $project->name }} {{ $project->id }}</p>
+            <div class="flex m-3">
+
+                <label class=" border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded  focus:outline-none focus:bg-white focus:border-gray-500" for="proyecto">Proyecto:</label>
+                <label class=" border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded  focus:outline-none focus:bg-white focus:border-gray-500" for="proyecto">{{ $project->nameCorto() }}</label>
+
+            </div>
             @if (session('status'))
 
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
@@ -82,7 +87,7 @@
 
                         <input type="text" name="project_id" class="hidden" value="{{ $project->id  }}">
 
-                        <input type="file" name="ruta" value="Adjuntar" class="form-input px-4 py-3 rounded-full transition duration-500 ease-in-out bg-blue-400 hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-110" required>
+                        <input type="file" name="ruta" value="Adjuntar" class="form-input px-4 py-3 rounded-full transition duration-500 ease-in-out bg-blue-400 hover:bg-blue-300 transform hover:-translate-y-1 hover:scale-101" required>
                         <button class="form-input px-4 py-3 rounded-full bg-blue-900 hover:bg-blue-800 text-white font-bold" type="submit">Guardar</button>
 
                     </form>
