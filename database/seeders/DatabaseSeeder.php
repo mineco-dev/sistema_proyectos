@@ -79,6 +79,7 @@ class DatabaseSeeder extends Seeder
         FormalizationDocument::create(['name'=>'Contrato']);
         FormalizationDocument::create(['name'=>'Plan de Trabajo']);
         FormalizationDocument::create(['name'=>'Memorandum']);
+        FormalizationDocument::create(['name'=>'Registro de Discusiones']);
         FormalizationDocument::create(['name'=>'Otro']);
 
         Moneda::create(['name'=>'Dólares']);

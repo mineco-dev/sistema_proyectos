@@ -8,6 +8,8 @@ use App\Models\Cooperation;
 use App\Models\CooperationType;
 use App\Models\FormalizationDocument;
 use App\Models\Project;
+use App\Models\Objetivo;
+use App\Models\Katun;
 use Livewire\Component;
 
 class ProyectoShow extends Component
@@ -18,6 +20,11 @@ class ProyectoShow extends Component
     public Cooperante $cooperante;
     public FormalizationDocument $documentFormalizacion;
     public Contact $contact;
+    public $objetivos;
+    public $katuns;
+    public $objetivos_seleccionados;
+    public $katuns_seleccionados;
+    public $valor;
 
     protected $rules = [
         'project.name' => '',
@@ -36,6 +43,10 @@ class ProyectoShow extends Component
         $this->cooperante = $this->project->cooperante;
         $this->documentFormalizacion = $this->project->formalizationDocument;
         $this->contact = Contact::where('project_id',$this->project->id)->first();
+        $this->objetivos = Objetivo::all();
+        $this->katuns = Katun::all();
+        $this->objetivos_seleccionados = json_decode($this->project->objetivo_id);
+        $this->katuns_seleccionados = json_decode($this->project->katun_id);
     }
 
     public function formatMonto(){

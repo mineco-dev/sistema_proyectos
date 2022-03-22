@@ -50,8 +50,10 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-
+    {   
+        //dd($request->objetivo_id);
+        $objetivos = json_encode($request->objetivo_id);
+        $katuns = json_encode($request->katun_id);
         //$request->monto = str_replace(',','',$request->monto);
         //dd($request->monto);}
         $monto_total = str_replace(',', '', $request->monto) + str_replace(',', '', $request->contrapartida);
@@ -71,8 +73,8 @@ class ProjectController extends Controller
             'beneficiarios' => $request->beneficiarios,
             'resumen' => $request->resumen,
             'resultados' => $request->resultados,
-            'objetivo_id' => $request->objetivo_id,
-            'katun_id' => $request->katun_id,
+            'objetivo_id' => $objetivos,
+            'katun_id' => $katuns,
             'descripcion' => $request->descripcion,
             'observaciones' => $request->observaciones,
             'unit_id' => $request->unit_id,

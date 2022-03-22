@@ -87,9 +87,9 @@
 
                     <label class="flex-1 m-2">
                         <span class="flex-1 text-gray-700 text-sm font-bold m-2">Monto Sin Contrapartida</span>
-                        <input wire:model.debounce.500ms="monto" wire:keyup.debounce.1000ms="formatMonto" name="monto" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required min="0" >
+                        <input wire:model.debounce.500ms="monto" wire:keyup.debounce.1000ms="formatMonto" name="monto" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required min="0">
                     </label>
-                    
+
 
                     <label class="flex-1 m-2">
                         <span class="flex-1 text-gray-700 text-sm font-bold m-2">Contrapartida MINECO</span>
@@ -166,11 +166,17 @@
                             ODS Vinculados
                         </label>
                         <div class="relative">
-                            <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="ods" required name="objetivo_id" multiple>
-                                @foreach($objetivos as $objetivo)
-                                <option value="{{ $objetivo->id }}">{{ $objetivo->name }}</option>
-                                @endforeach
-                            </select>
+                            <div class="flex justify-center">
+                                <div class="form-check">
+                                    @foreach($objetivos as $objetivo)
+                                    <input name="objetivo_id[]" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $objetivo->id }}" id="flexCheckDefault{{ $objetivo->id }}">
+                                    <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault{{ $objetivo->id }}">
+                                        {{ $objetivo->name }}
+                                    </label>
+                                    <br>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -179,12 +185,17 @@
                             Vinculación K'atun
                         </label>
                         <div class="relative">
-                            <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="unidad_ejecutora" required name="katun_id">
-                                <option hidden selected value="">Selecciona una opción</option>
-                                @foreach($katuns as $katun)
-                                <option value="{{ $katun->id }}">{{ $katun->name }}</option>
-                                @endforeach
-                            </select>
+                            <div class="flex justify-center">
+                                <div class="form-check">
+                                    @foreach($katuns as $katun)
+                                    <input name="katun_id[]" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $katun->id }}" id="flexCheck{{ $katun->id }}">
+                                    <label class="form-check-label inline-block text-gray-800" for="flexCheck{{ $katun->id }}">
+                                        {{ $katun->name }}
+                                    </label>
+                                    <br>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

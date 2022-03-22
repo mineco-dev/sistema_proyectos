@@ -149,11 +149,32 @@
                         ODS Vinculados
                     </label>
                     <div class="relative">
-                        <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="ods" required name="objetivo_id" disabled>
-
-                            <option hidden selected value="">{{ $project->objetivo->name }}</option>
-
-                        </select>
+                        <div class="form-check">
+                            @php
+                            $valor = 1
+                            @endphp
+                            @foreach($objetivos as $objetivo)
+                            @foreach($objetivos_seleccionados as $seleccionado)
+                            @if ($objetivo->id == $seleccionado)
+                            <input name="objetivo_id[]" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $objetivo->id }}" id="flexCheckDefault{{ $objetivo->id }}" checked disabled>
+                            @php
+                            $valor = 0
+                            @endphp
+                            @break
+                            @endif
+                            @endforeach
+                            @if ($valor)
+                            <input name="objetivo_id[]" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $objetivo->id }}" id="flexCheckDefault{{ $objetivo->id }}" disabled>
+                            @endif
+                            @php
+                            $valor = 1
+                            @endphp
+                            <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault{{ $objetivo->id }}">
+                                {{ $objetivo->name }}
+                            </label>
+                            <br>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
@@ -162,10 +183,32 @@
                         Vinculación K'atun
                     </label>
                     <div class="relative">
-                        <select class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="unidad_ejecutora" required name="katun_id" disabled>
-                            <option hidden selected value="">{{ $project->katun->name }}</option>
-
-                        </select>
+                        <div class="form-check">
+                            @php
+                            $valor = 1
+                            @endphp
+                            @foreach($katuns as $katun)
+                            @foreach($katuns_seleccionados as $seleccionado)
+                            @if ($katun->id == $seleccionado)
+                            <input name="katun_id[]" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $katun->id }}" id="flexCheckDefault{{ $katun->id }}" checked disabled>
+                            @php
+                            $valor = 0
+                            @endphp
+                            @break
+                            @endif
+                            @endforeach
+                            @if ($valor)
+                            <input name="katun_id[]" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $katun->id }}" id="flexCheckDefault{{ $katun->id }}" disabled>
+                            @endif
+                            @php
+                            $valor = 1
+                            @endphp
+                            <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault{{ $katun->id }}">
+                                {{ $katun->name }}
+                            </label>
+                            <br>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,12 +276,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
 
             @if ($errors->any())
             <div class="text-red-500 text-sm">
