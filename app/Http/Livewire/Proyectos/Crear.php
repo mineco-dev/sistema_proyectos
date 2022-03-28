@@ -23,8 +23,12 @@ class Crear extends Component
     public $montoTotal;
     public $name;
 
+    protected $rules = [
+        'monto' => 'required|numeric',
+        'contrapartida' => 'required|numeric'
+    ];
 
-    
+   
     public function updatedMonto(){
         $monto=str_replace(',','',$this->monto);
         $contrapartida=str_replace(',','',$this->contrapartida);
@@ -42,19 +46,23 @@ class Crear extends Component
     }
 
     public function formatMonto(){
-        
-        $monto_nuevo = $this->monto;
-        $monto_nuevo = number_format($monto_nuevo, 2, '.', ',');
-        $this->monto = $monto_nuevo;
+        $this->validateOnly('monto');
 
+        if ($this->monto) {
+            $monto_nuevo = $this->monto;
+            $monto_nuevo = number_format($monto_nuevo, 2, '.', ',');
+            $this->monto = $monto_nuevo;
+        }
     }
 
     
     public function formatContrapartida(){
-        
-        $monto_nuevo = $this->contrapartida;
-        $monto_nuevo = number_format($monto_nuevo, 2, '.', ',');
-        $this->contrapartida = $monto_nuevo;
+        $this->validateOnly('contrapartida');
+        if ($this->contrapartida) {
+            $monto_nuevo = $this->contrapartida;
+            $monto_nuevo = number_format($monto_nuevo, 2, '.', ',');
+            $this->contrapartida = $monto_nuevo;
+        }
 
     }
 

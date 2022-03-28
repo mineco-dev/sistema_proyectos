@@ -87,13 +87,13 @@
 
                     <label class="flex-1 m-2">
                         <span class="flex-1 text-gray-700 text-sm font-bold m-2">Monto Sin Contrapartida</span>
-                        <input wire:model.debounce.500ms="monto" wire:keyup.debounce.1000ms="formatMonto" name="monto" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required min="0">
+                        <input wire:model.debounce.500ms="monto" wire:keyup.debounce.2000ms="formatMonto" name="monto" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required min="0">
                     </label>
 
 
                     <label class="flex-1 m-2">
                         <span class="flex-1 text-gray-700 text-sm font-bold m-2">Contrapartida MINECO</span>
-                        <input wire:model.debounce.500ms="contrapartida" wire:keyup.debounce.1000ms="formatContrapartida" name="contrapartida" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required>
+                        <input wire:model.debounce.500ms="contrapartida" wire:keyup.debounce.2000ms="formatContrapartida" name="contrapartida" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required>
                     </label>
 
                     <label class="flex-1 m-2">
