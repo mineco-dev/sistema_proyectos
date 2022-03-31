@@ -170,7 +170,7 @@
                             $valor = 1
                             @endphp
                             <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault{{ $objetivo->id }}">
-                                {{ $objetivo->name }}
+                                {{ $objetivo->codigo }} - {{ $objetivo->name }}
                             </label>
                             <br>
                             @endforeach
@@ -204,7 +204,7 @@
                             $valor = 1
                             @endphp
                             <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault{{ $katun->id }}">
-                                {{ $katun->name }}
+                                {{ $katun->codigo }} - {{ $katun->name }}
                             </label>
                             <br>
                             @endforeach

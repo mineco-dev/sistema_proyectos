@@ -171,7 +171,7 @@
                                     @foreach($objetivos as $objetivo)
                                     <input name="objetivo_id[]" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $objetivo->id }}" id="flexCheckDefault{{ $objetivo->id }}">
                                     <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault{{ $objetivo->id }}">
-                                        {{ $objetivo->name }}
+                                    {{ $objetivo->codigo }} - {{ $objetivo->name }}
                                     </label>
                                     <br>
                                     @endforeach
@@ -190,7 +190,7 @@
                                     @foreach($katuns as $katun)
                                     <input name="katun_id[]" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $katun->id }}" id="flexCheck{{ $katun->id }}">
                                     <label class="form-check-label inline-block text-gray-800" for="flexCheck{{ $katun->id }}">
-                                        {{ $katun->name }}
+                                        {{ $katun->codigo }} - {{ $katun->name }}
                                     </label>
                                     <br>
                                     @endforeach

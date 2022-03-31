@@ -16,6 +16,7 @@ class CreateKatunsTable extends Migration
         Schema::create('katuns', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('codigo')->unique();
             $table->timestamps();
         });
     }

@@ -94,33 +94,32 @@ class DatabaseSeeder extends Seeder
         ResourceClassification::create(['name'=>'Técnicos y en especie']);
         ResourceClassification::create(['name'=>'Financieros y en especie']);
 
-        Objetivo::create(['name'=>'Fin de la pobreza']);
-        Objetivo::create(['name'=>'Hambre 0']);
-        Objetivo::create(['name'=>'Salud y Bienestar']);
-        Objetivo::create(['name'=>'Educación de Calidad']);
-        Objetivo::create(['name'=>'Igualdad de Género']);
-        Objetivo::create(['name'=>'Agua limpia y saneamiento']);
-        Objetivo::create(['name'=>'Energía Asequible y no contaminante']);
-        Objetivo::create(['name'=>'Trabajo decente y crecimiento económico']);
-        Objetivo::create(['name'=>'Industria, innovación e infraestructura']);
-        Objetivo::create(['name'=>'Reducción de las desigualdades']);
-        Objetivo::create(['name'=>'Ciudades y comunidades sostenibles']);
-        Objetivo::create(['name'=>'Producción y consumo responsables']);
-        Objetivo::create(['name'=>'Acción por el clima']);
-        Objetivo::create(['name'=>'Vida Submarina']);
-        Objetivo::create(['name'=>'Vida de Ecosistemas terrestres']);
-        Objetivo::create(['name'=>'Paz, justicia e instituciones sólidas']);
-        Objetivo::create(['name'=>'Alianzas para lograr los objetivos']);
+        Objetivo::create(['name'=>'Fin de la pobreza', 'codigo'=>'1']);
+        Objetivo::create(['name'=>'Hambre 0', 'codigo'=>'2']);
+        Objetivo::create(['name'=>'Salud y Bienestar', 'codigo'=>'3']);
+        Objetivo::create(['name'=>'Educación de Calidad', 'codigo'=>'4']);
+        Objetivo::create(['name'=>'Igualdad de Género', 'codigo'=>'5']);
+        Objetivo::create(['name'=>'Agua limpia y saneamiento', 'codigo'=>'6']);
+        Objetivo::create(['name'=>'Energía Asequible y no contaminante', 'codigo'=>'7']);
+        Objetivo::create(['name'=>'Trabajo decente y crecimiento económico', 'codigo'=>'8']);
+        Objetivo::create(['name'=>'Industria, innovación e infraestructura', 'codigo'=>'9']);
+        Objetivo::create(['name'=>'Reducción de las desigualdades', 'codigo'=>'10']);
+        Objetivo::create(['name'=>'Ciudades y comunidades sostenibles', 'codigo'=>'11']);
+        Objetivo::create(['name'=>'Producción y consumo responsables', 'codigo'=>'12']);
+        Objetivo::create(['name'=>'Acción por el clima', 'codigo'=>'13']);
+        Objetivo::create(['name'=>'Vida Submarina', 'codigo'=>'14']);
+        Objetivo::create(['name'=>'Vida de Ecosistemas terrestres', 'codigo'=>'15']);
+        Objetivo::create(['name'=>'Paz, justicia e instituciones sólidas', 'codigo'=>'16']);
+        Objetivo::create(['name'=>'Alianzas para lograr los objetivos', 'codigo'=>'17']);
 
-        Unit::create(['name'=>'101']);
-        Unit::create(['name'=>'102']);
-        Unit::create(['name'=>'103']);
-        Unit::create(['name'=>'104']);
-        Unit::create(['name'=>'105']);
-        Unit::create(['name'=>'106']);
-        Unit::create(['name'=>'107']);
-        Unit::create(['name'=>'108']);
-        Unit::create(['name'=>'109']);
+        Unit::create(['name'=>'101 - Dirección Superior']);
+        Unit::create(['name'=>'102 - Registro Mercantil General de la República ']);
+        Unit::create(['name'=>'103 - Registro de la Propiedad Intelectual']);
+        Unit::create(['name'=>'104 - Dirección del Sistema Nacional de la Calidad']);
+        Unit::create(['name'=>'105 - Dirección de Servicios Financieros Empresariales']);
+        Unit::create(['name'=>'106 - Dirección de Atención y Asistencia al Consumidor']);
+        Unit::create(['name'=>'107 - Programa de Apoyo al Comercio Exterior y la Integración']);
+        Unit::create(['name'=>'108 - Programa Nacional de la Competitividad']);
 
         State::create(['name'=>'Negociación']);
         State::create(['name'=>'Registro']);
@@ -128,16 +127,16 @@ class DatabaseSeeder extends Seeder
         State::create(['name'=>'Ejecución']);
         State::create(['name'=>'Cierre']);
 
-        Katun::create(['name'=>'Protección Social y Reducción de la Pobreza']);
-        Katun::create(['name'=>'Acceso a Servicios de Salud']);
-        Katun::create(['name'=>'Acceso al Agua y Gestión de Recursos Naturales']);
-        Katun::create(['name'=>'Empleo e Inversión']);
-        Katun::create(['name'=>'Educación']);
-        Katun::create(['name'=>'Valor económico de los Recursos Naturales']);
-        Katun::create(['name'=>'Fortalecimiento institucional, seguridad y justicia']);
-        Katun::create(['name'=>'Seguridad Alimentaria y Nutricional']);
-        Katun::create(['name'=>'Reforma Fiscal Integral']);
-        Katun::create(['name'=>'Ordenamiento Territorial']);
+        Katun::create(['name'=>'Protección Social y Reducción de la Pobreza', 'codigo'=>'1']);
+        Katun::create(['name'=>'Acceso a Servicios de Salud', 'codigo'=>'2']);
+        Katun::create(['name'=>'Acceso al Agua y Gestión de Recursos Naturales', 'codigo'=>'3']);
+        Katun::create(['name'=>'Empleo e Inversión', 'codigo'=>'4']);
+        Katun::create(['name'=>'Educación', 'codigo'=>'5']);
+        Katun::create(['name'=>'Valor económico de los Recursos Naturales', 'codigo'=>'6']);
+        Katun::create(['name'=>'Fortalecimiento institucional, seguridad y justicia', 'codigo'=>'7']);
+        Katun::create(['name'=>'Seguridad Alimentaria y Nutricional', 'codigo'=>'8']);
+        Katun::create(['name'=>'Reforma Fiscal Integral', 'codigo'=>'9']);
+        Katun::create(['name'=>'Ordenamiento Territorial', 'codigo'=>'10']);
 
         Role::create(['name'=>'Administrador']);
 
