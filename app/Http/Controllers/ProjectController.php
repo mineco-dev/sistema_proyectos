@@ -6,6 +6,7 @@ use App\Http\Livewire\Proyectos\Expediente;
 use App\Models\Contact;
 use App\Models\ContactType;
 use App\Models\Expediente as ModelsExpediente;
+use App\Models\Informe as ModelsInforme;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -158,6 +159,27 @@ class ProjectController extends Controller
         $expediente = ModelsExpediente::find($expediente);
         $expediente->delete();
         Storage::disk('public')->delete($expediente->ruta);
+        return back()->with('status','Archivo pdf eliminado con éxito.');
+    }
+
+    public function cargarInforme(Request $request){
+
+        //dd($request->ruta);
+        $informe = new ModelsInforme();
+        $informe->project_id = $request->project_id;
+        $informe->nombre = $request->name;
+        $informe->ruta = $request->file('ruta')->store('informes','public');
+        $informe->save();
+
+        return redirect(route('proyecto-informe',$request->project_id))->with('status','Archivo cargado con éxito.');
+
+    }
+
+    public function eliminarInforme($informe){
+        //dd($project);
+        $informe = ModelsInforme::find($informe);
+        $informe->delete();
+        Storage::disk('public')->delete($informe->ruta);
         return back()->with('status','Archivo pdf eliminado con éxito.');
     }
 }

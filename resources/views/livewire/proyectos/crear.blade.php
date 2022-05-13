@@ -207,7 +207,7 @@
 
                 <label class="block m-2">
                     <span class="block text-gray-700 text-sm font-bold m-2">Observaciones adicionales</span>
-                    <textarea type="text" name="observaciones" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="" required></textarea>
+                    <textarea type="text" name="observaciones" class="flex-1 appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder=""></textarea>
                 </label>
 
                 <div class="flex">

@@ -33,7 +33,7 @@ class CreateProjectsTable extends Migration
             $table->json('objetivo_id');
             $table->json('katun_id');
             $table->text('descripcion');
-            $table->text('observaciones');
+            $table->text('observaciones')->nullable();
             $table->foreignId('unit_id')->constrained();
             $table->text('unidad_beneficiada');
             $table->foreignId('state_id')->constrained();

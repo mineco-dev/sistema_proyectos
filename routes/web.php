@@ -21,6 +21,7 @@ use App\Http\Livewire\Ingreso\Form;
 use App\Http\Livewire\Proyectos\ContactList;
 use App\Http\Livewire\Proyectos\Crear;
 use App\Http\Livewire\Proyectos\Expediente;
+use App\Http\Livewire\Proyectos\Informe;
 use App\Http\Livewire\Proyectos\ProyectoShow;
 use App\Http\Livewire\Proyectos\Vigencia;
 use App\Http\Livewire\Usuario;
@@ -70,11 +71,14 @@ Route::resource('tipo-cooperacion',CooperationTypeController::class)->middleware
 Route::get('proyectos/{project}/vigencia',Vigencia::class)->name('proyectos-vigencia');
 Route::get('proyectos/{project}/contactos',ContactList::class)->name('proyectos-contactos');
 Route::get('proyectos/{project}/expediente',Expediente::class)->name('proyecto-expediente');
+Route::get('proyectos/{project}/informe',Informe::class)->name('proyecto-informe');
 
 Route::get('proyectos/{project}/mostrar',ProyectoShow::class)->name('proyectos-mostrar')->middleware('auth');
 
 Route::post('proyecto/cargar-expediente',[ProjectController::class,'cargarExpediente'])->name('cargar-expediente');
+Route::post('proyecto/cargar-expediente',[ProjectController::class,'cargarInforme'])->name('cargar-informe');
 Route::get('proyecto/{expediente}/eliminar-expediente',[ProjectController::class,'eliminarExpediente'])->name('eliminar-expediente');
+Route::get('proyecto/{informe}/eliminar-informe',[ProjectController::class,'eliminarInforme'])->name('eliminar-informe');
 
 Route::get('usuarios',Usuario::class)->name('usuarios')->middleware('auth');
 Route::get('roles',Rol::class)->name('roles')->middleware('auth');

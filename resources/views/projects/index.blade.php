@@ -69,6 +69,7 @@
                 <a href="{{ route('proyectos-contactos',$proyecto) }}"><button class="bg-blue-900 hover:bg-blue-800 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Contacto</button></a>
                 <a href="{{ route('proyectos-vigencia',$proyecto) }}"><button class="bg-blue-900 hover:bg-blue-800 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Vigencia</button></a>
                 <a href="{{ route('proyecto-expediente',$proyecto) }}"><button class="fa-thin fa-paperclip bg-blue-900 hover:bg-blue-800 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Expediente</button></a>
+                <a href="{{ route('proyecto-informe',$proyecto) }}"><button class="fa-thin fa-paperclip bg-blue-900 hover:bg-blue-800 text-white font-bold p-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Informes</button></a>
             </td>
 
 
