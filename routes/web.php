@@ -76,7 +76,7 @@ Route::get('proyectos/{project}/informe',Informe::class)->name('proyecto-informe
 Route::get('proyectos/{project}/mostrar',ProyectoShow::class)->name('proyectos-mostrar')->middleware('auth');
 
 Route::post('proyecto/cargar-expediente',[ProjectController::class,'cargarExpediente'])->name('cargar-expediente');
-Route::post('proyecto/cargar-expediente',[ProjectController::class,'cargarInforme'])->name('cargar-informe');
+Route::post('proyecto/cargar-informe',[ProjectController::class,'cargarInforme'])->name('cargar-informe');
 Route::get('proyecto/{expediente}/eliminar-expediente',[ProjectController::class,'eliminarExpediente'])->name('eliminar-expediente');
 Route::get('proyecto/{informe}/eliminar-informe',[ProjectController::class,'eliminarInforme'])->name('eliminar-informe');
 
